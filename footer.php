@@ -11,22 +11,40 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'vape-shop' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'vape-shop' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'vape-shop' ), 'vape-shop', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+        <footer>
+            <section class="footer-section">
+
+                <div class="container">
+                    <div class="row footer-content">
+                        <div class="col-6">
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Контакти</a></li>
+                                    <li><a href="#">Оплата</a></li>
+                                    <li><a href="#">Доставка</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6 footer-text">
+                            <div>
+                                <p>Наші контакти</p>
+                            </div>
+                            <div>
+                                <p>8 800 900 70 90</p>
+                            </div>
+                            <div>
+                                <p>м. Херсон, вул. Джавеліна 51</p>
+                            </div>
+                            <div>
+                                <p>Пн-вс: 10:00 - 21:00<br>без вихідних</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+    </div>
 
 <?php wp_footer(); ?>
 

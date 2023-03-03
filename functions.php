@@ -139,7 +139,7 @@ add_action( 'widgets_init', 'vape_shop_widgets_init' );
  */
 function vape_shop_scripts() {
 	wp_enqueue_style( 'vape-shop-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'vape-shop-style', 'rtl', 'replace' );
+	wp_style_add_data( 'vape-shop-style', 'rtl', 'replace' );	
 
 	wp_enqueue_script( 'vape-shop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -147,7 +147,19 @@ function vape_shop_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
+function v_p_styles() {
+	wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css');
+	wp_enqueue_style('vp_style.css', get_template_directory_uri() . '/assets/css/style.css');
+}
+
+function v_p_scripts() {
+	wp_enqueue_script('bootsrap_scripts', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js');
+}
+
 add_action( 'wp_enqueue_scripts', 'vape_shop_scripts' );
+add_action('wp_enqueue_scripts', 'v_p_styles');
+add_action('wp_footer', 'v_p_scripts');
 
 /**
  * Implement the Custom Header feature.
