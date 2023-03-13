@@ -52,15 +52,18 @@ get_header();
     <section class="front-sale-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-12 front-sale">
-                    <img class="sale-img" src="../vape shop/image/front-sale-1.jpg" alt="">
-                </div>
-                <div class="col-lg-4 col-12 front-sale">
-                    <img class="sale-img" src="../vape shop/image/front-sale-2.jpg" alt="">
-                </div>
-                <div class="col-lg-4 col-12 front-sale">
-                    <img class="sale-img" src="../vape shop/image/front-sale-3.jpg" alt="">
-                </div>
+                <?php
+                if (have_rows('slider_image')) :
+                    while (have_rows('sale_image')) : the_row();
+                        $sale_image = get_sub_field('sale_img');
+                        $sale_img = wp_get_attachment_image($sale_image, 'full', false, ['class' => 'sale-img']);
+                ?>
+                        <div class="col-lg-4 col-12 front-sale">
+                           <?php echo $sale_img; ?>
+                        </div>
+                <?php
+                    endwhile;
+                endif; ?>
             </div>
         </div>
     </section> <!-- Sale section End -->
