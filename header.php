@@ -26,13 +26,13 @@
         <div class="container">
             <div class="header-title">
                 <div class="header-slogan">
-                    <h2>Vape Shop</h2>
+                    <h2><?php echo get_field('header_slogan'); ?></h2>
                 </div>
                 <div>
                     <div class="header-busket">
                         <div class="contact">
-                            <p class="phone">8 800 900 70 90</p>
-                            <p class="work-time">Пн-вс: 10:00 - 21:00</p>
+                            <p class="phone"><?php echo get_field('header_phone'); ?></p>
+                            <p class="work-time"><?php echo get_field('header_work_time'); ?></p>
                         </div>
                         <div>
                             <div class="busket">
