@@ -59,7 +59,7 @@ get_header();
                         $sale_img = wp_get_attachment_image($sale_image, 'full', false, ['class' => 'sale-img']);
                 ?>
                         <div class="col-lg-4 col-12 front-sale">
-                           <?php echo $sale_img; ?>
+                            <?php echo $sale_img; ?>
                         </div>
                 <?php
                     endwhile;
@@ -74,38 +74,49 @@ get_header();
 
         <div class="container">
 
+            <?php
+            $grid_fields = get_field('grid_section');
+            $grid_img_1 = wp_get_attachment_image($grid_fields['grid_img_1'], 'full', false, ['class' => 'front-grid-img']);
+            $grid_img_2 = wp_get_attachment_image($grid_fields['grid_img_2'], 'full', false, ['class' => 'front-grid-img']);
+            $grid_img_3 = wp_get_attachment_image($grid_fields['grid_img_3'], 'full', false, ['class' => 'front-grid-img']);
+            $grid_img_4 = wp_get_attachment_image($grid_fields['grid_img_4'], 'full', false, ['class' => 'front-grid-img']);
+            $grid_img_5 = wp_get_attachment_image($grid_fields['grid_img_5'], 'full', false, ['class' => 'front-grid-img']);
+            $grid_img_6 = wp_get_attachment_image($grid_fields['grid_img_6'], 'full', false, ['class' => 'front-grid-img']);
+            $grid_img_7 = wp_get_attachment_image($grid_fields['grid_img_7'], 'full', false, ['class' => 'front-grid-img']);
+            ?>
+
             <div>
-                <h2>Популярні категорії</h2>
+                <h2><?php echo $grid_fields['grid_heading']; ?></h2>
             </div>
 
             <div class="grid-container">
 
                 <div class="front-grid-item1">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-1.jpg" alt="">
+                    <?php echo $grid_img_1; ?>
                 </div>
 
                 <div class="front-grid-item2">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-2.jpg" alt="">
+                    <?php echo $grid_img_2; ?>
                 </div>
 
                 <div class="front-grid-item3">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-3.jpg" alt="">
+                    <?php echo $grid_img_3; ?>
                 </div>
 
                 <div class="front-grid-item4">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-4.jpg" alt="">
+                    <?php echo $grid_img_4; ?>
                 </div>
 
                 <div class="front-grid-item5">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-5.jpg" alt="">
+                    <?php echo $grid_img_5; ?>
                 </div>
 
                 <div class="front-grid-item6">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-6.jpg" alt="">
+                    <?php echo $grid_img_6; ?>
                 </div>
 
                 <div class="front-grid-item7">
-                    <img class="front-grid-img" src="../vape shop/image/grid-img-7.jpg" alt="">
+                    <?php echo $grid_img_7; ?>
                 </div>
 
             </div>
@@ -113,8 +124,5 @@ get_header();
         </div>
 
     </section> <!-- Grid section End -->
-
-
-
 
     <?php get_footer(); ?>
