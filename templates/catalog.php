@@ -52,7 +52,7 @@ $products = new WP_Query($args);
                         ?>
                                 <div class="catalog-card">
                                     <div class="catalog-card-img">
-                                        <?php echo $product->get_image( array( 270, 270 ) ); ?>
+                                        <?php echo $product->get_image('full', array('class' => 'catalog-img')); ?>
                                     </div>
                                     <div class="catalog-card-name">
                                         <p><?php echo $product->get_name(); ?></p>
