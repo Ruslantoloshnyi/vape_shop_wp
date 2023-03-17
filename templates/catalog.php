@@ -23,22 +23,25 @@ $products = new WP_Query($args);
         <div class="container">
             <div class="catalog-head">
                 <div>
-                    <h2>Каталог</h2>
+                    <h2><?php echo get_field('catalog_heading'); ?></h2>
                 </div>
 
             </div>
 
             <div class="row">
                 <div class="col-lg-3 col-md-2 col-3 catalog-link">
-                    <div>
-                        <a href="#"><img class="catalog-img" src="../vape shop/image/catalog-link1.png" alt=""></a>
-                    </div>
-                    <div>
-                        <a href="#"><img class="catalog-img" src="../vape shop/image/catalog-link2.png" alt=""></a>
-                    </div>
-                    <div>
-                        <a href="#"><img class="catalog-img" src="../vape shop/image/catalog-link3.png" alt=""></a>
-                    </div>
+                    <?php
+                    if (have_rows('catalog_sidebar')) :
+                        while (have_rows('catalog_sidebar')) : the_row();
+                            $image = get_sub_field('catalog_sidebar_image');
+                            $img = wp_get_attachment_image($image, 'full', 'false', array('class' => 'catalog-img'));
+                    ?>
+                            <div>
+                                <a href="<?php echo get_sub_field('catalog_sidebar_link'); ?>"><?php echo $img; ?></a>
+                            </div>
+                    <?php
+                        endwhile;
+                    endif; ?>
                 </div>
 
                 <div class="col-lg-9 col-md-10 col-9">
@@ -65,7 +68,7 @@ $products = new WP_Query($args);
                         <?php
                             endwhile;
                             wp_reset_postdata();
-                        endif;                         
+                        endif;
                         ?>
 
                     </div>
