@@ -8,10 +8,12 @@ get_header();
 ?>
 
 <?php
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type'      => 'product',
-    'posts_per_page' => 8,
+    'posts_per_page' => 3,
     'orderby'        => 'rand',
+    'paged'          => $paged
 );
 $products = new WP_Query($args);
 ?>
@@ -65,46 +67,33 @@ $products = new WP_Query($args);
                                         <div class="catalog-busket">В корзину</div>
                                     </div>
                                 </div>
-                        <?php
-                            endwhile;
-                            wp_reset_postdata();
-                        endif;
-                        ?>
-
+                            <?php endwhile; ?>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </section>
 
     <!-- Pagination -->
     <section class="pagination-section">
-
         <nav aria-label="...">
-            <ul class="pagination">
-                <li class="page-item disabled">
-                    <a class="page-link"><img src="../vape shop/image/pagination-left.png" alt=""><a>
-
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#"><img src="../vape shop/image/pagination-right.png" alt=""></a>
-                </li>
-            </ul>
+            <?php
+                            $pagination_links_string = paginate_links(array(
+                                'format' => '?paged=%#%',
+                                'current' => max(1, $paged),
+                                'total' => $products->max_num_pages,
+                                'prev_text' => '<<',
+                                'next_text' => '>>',
+                                'type'         => 'list'
+                            ));
+                            $pagination_links_string = str_replace('<li>', '<li class="page-item">', $pagination_links_string);
+                            echo $pagination_links_string;
+            ?>
         </nav>
-
     </section> <!-- Pagination end -->
+<?php
+                        endif;
+                        wp_reset_postdata();
+?>
 
-
-
-
-
-
-    <?php get_footer(); ?>
+<?php get_footer(); ?>

@@ -315,15 +315,37 @@
     justify-content: center;
 }
 
-.pagination li a {
-    background-color: white;
-    color: #BF1E77;
+.page-numbers {
+    display: flex;
+    list-style-type: none;    
 }
 
-.pagination li.active a {
+.page-item {
+    padding: 15px 24px;
+    background: #FBF7F4;
+    border-radius: 4px;
+    margin-right: 15px;
+    border: 1px solid #E5E5E5; 
+}
+
+.page-item a.page-numbers {
+   text-decoration: none;
+   color: #BF1E77;
+}
+
+.page-item span {
+    color: #E5E5E5;
+}
+
+/* .pagination li a {
+    background-color: white;
+    color: #BF1E77;
+} */
+
+/* .pagination li.active a {
     background-color: #BF1E77;
     border: solid 1px #BF1E77;
-}
+} */
 
 /*Catalog-product*/
 .sort {
