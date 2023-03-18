@@ -11,7 +11,7 @@ get_header();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type'      => 'product',
-    'posts_per_page' => 3,
+    'posts_per_page' => 9,
     'orderby'        => 'rand',
     'paged'          => $paged
 );
