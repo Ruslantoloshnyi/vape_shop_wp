@@ -1,0 +1,103 @@
+{
+    "key": "group_64171f6573c07",
+    "title": "Catalog single product fields",
+    "fields": [
+        {
+            "key": "field_6417240c64770",
+            "label": "Catalog single product heading",
+            "name": "catalog_single_product_heading",
+            "type": "text",
+            "instructions": "введiть назву категорii",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6417244664771",
+            "label": "Catalog single product sidebar",
+            "name": "catalog_single_product_sidebar",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 10,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6417252764772",
+                    "label": "Catalog single product link",
+                    "name": "catalog_single_product_link",
+                    "type": "link",
+                    "instructions": "посилання на сторiнку категорii",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_6417256c64773",
+                    "label": "Catalog single product link img",
+                    "name": "catalog_single_product_link_img",
+                    "type": "image",
+                    "instructions": "Зображення кнопки категорii",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "full",
+                    "library": "all",
+                    "min_width": 200,
+                    "min_height": 50,
+                    "min_size": "",
+                    "max_width": 300,
+                    "max_height": 80,
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/catalog-single-product.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1679243352
+}
