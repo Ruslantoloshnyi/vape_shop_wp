@@ -6,6 +6,7 @@
 
 get_header();
 ?>
+<?php $catagory_name = get_field('catalog_single_product_heading'); ?>
 
 <div class="back-color">
     <!-- Catalog Section
@@ -19,7 +20,7 @@ get_header();
                 <div class="col-md-6 col-12">
                     <div class="catalog-head">
                         <div>
-                            <h2><?php echo get_field('catalog_single_product_heading'); ?></h2>
+                            <h2><?php echo $catagory_name; ?></h2>
                         </div>
                     </div>
                 </div>
@@ -63,91 +64,48 @@ get_header();
                     <?php
                         endwhile;
                     endif; ?>
-
                 </div>
 
                 <div class="col-lg-9 col-md-10 col-9">
 
                     <div class="card-row">
+                        <?php
 
-                        <div class="catalog-card">
-                            <div class="catalog-card-img">
-                                <img class="catalog-img" src="../vape shop/image/catalog-card-img1.png" alt="">
-                            </div>
-                            <div class="catalog-card-name">
-                                <p>Vape name</p>
-                            </div>
-                            <div class="catalog-card-price">
-                                <div class="catalog-price">240 грн</div>
-                                <div class="catalog-busket">В корзину</div>
-                            </div>
-                        </div>
+                        $args = array(
+                            'post_type' => 'product',
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'product_cat',
+                                    'field'    => 'name',
+                                    'terms'    => $catagory_name,
+                                ),
+                            ),
+                        );
+                        $catagory_products = new WP_Query($args);
 
-                        <div class="catalog-card">
-                            <div class="catalog-card-img">
-                                <img class="catalog-img" src="../vape shop/image/catalog-card-img1.png" alt="">
-                            </div>
-                            <div class="catalog-card-name">
-                                <p>Vape name</p>
-                            </div>
-                            <div class="catalog-card-price">
-                                <div class="catalog-price">240 грн</div>
-                                <div class="catalog-busket">В корзину</div>
-                            </div>
-                        </div>
-
-                        <div class="catalog-card">
-                            <div class="catalog-card-img">
-                                <img class="catalog-img" src="../vape shop/image/catalog-card-img1.png" alt="">
-                            </div>
-                            <div class="catalog-card-name">
-                                <p>Vape name</p>
-                            </div>
-                            <div class="catalog-card-price">
-                                <div class="catalog-price">240 грн</div>
-                                <div class="catalog-busket">В корзину</div>
-                            </div>
-                        </div>
-
-                        <div class="catalog-card">
-                            <div class="catalog-card-img">
-                                <img class="catalog-img" src="../vape shop/image/catalog-card-img1.png" alt="">
-                            </div>
-                            <div class="catalog-card-name">
-                                <p>Vape name</p>
-                            </div>
-                            <div class="catalog-card-price">
-                                <div class="catalog-price">240 грн</div>
-                                <div class="catalog-busket">В корзину</div>
-                            </div>
-                        </div>
-
-                        <div class="catalog-card">
-                            <div class="catalog-card-img">
-                                <img class="catalog-img" src="../vape shop/image/catalog-card-img1.png" alt="">
-                            </div>
-                            <div class="catalog-card-name">
-                                <p>Vape name</p>
-                            </div>
-                            <div class="catalog-card-price">
-                                <div class="catalog-price">240 грн</div>
-                                <div class="catalog-busket">В корзину</div>
-                            </div>
-                        </div>
-
-                        <div class="catalog-card">
-                            <div class="catalog-card-img">
-                                <img class="catalog-img" src="../vape shop/image/catalog-card-img1.png" alt="">
-                            </div>
-                            <div class="catalog-card-name">
-                                <p>Vape name</p>
-                            </div>
-                            <div class="catalog-card-price">
-                                <div class="catalog-price">240 грн</div>
-                                <div class="catalog-busket">В корзину</div>
-                            </div>
-                        </div>
-
+                        if ($catagory_products->have_posts()) :
+                            while ($catagory_products->have_posts()) :
+                                $catagory_products->the_post();
+                                $product = wc_get_product(get_the_ID());
+                        ?>
+                                <div class="catalog-card">
+                                    <div class="catalog-card-img">
+                                        <?php echo $product->get_image('full', array('class' => 'catalog-img')); ?>
+                                    </div>
+                                    <div class="catalog-card-name">
+                                        <p><?php echo $product->get_name(); ?></p>
+                                    </div>
+                                    <div class="catalog-card-price">
+                                        <div class="catalog-price"><?php echo $product->get_price(); ?> грн</div>
+                                        <div class="catalog-busket">В корзину</div>
+                                    </div>
+                                </div>
+                        <?php
+                            endwhile;
+                        endif;
+                        wp_reset_postdata();
+                        ?>
                     </div>
 
                 </div>
@@ -156,5 +114,4 @@ get_header();
 
     </section>
 
-
-    <?php get_footer();
+    <?php get_footer(); ?>
