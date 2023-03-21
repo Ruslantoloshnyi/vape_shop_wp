@@ -91,7 +91,7 @@ get_header();
                         ?>
                                 <div class="catalog-card">
                                     <div class="catalog-card-img">
-                                        <?php echo $product->get_image('full', array('class' => 'catalog-img')); ?>
+                                        <a href="<?php the_permalink(); ?>"><?php echo $product->get_image('full', array('class' => 'catalog-img')); ?></a>
                                     </div>
                                     <div class="catalog-card-name">
                                         <p><?php echo $product->get_name(); ?></p>
