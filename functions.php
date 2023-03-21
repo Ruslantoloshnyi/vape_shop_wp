@@ -197,4 +197,19 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
+/**
+ * add Option page.
+ */
+if (function_exists('acf_add_options_page')) {
+
+	acf_add_options_page(array(
+		'page_title'    => 'Global fields',
+		'menu_title'    => 'Global fields',
+		'menu_slug'     => 'theme-general-settings',
+		'capability'    => 'edit_posts',
+		'redirect'      => false
+	));
+
+};
+
 
