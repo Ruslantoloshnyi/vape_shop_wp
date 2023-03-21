@@ -1,0 +1,81 @@
+{
+    "key": "group_6419c6fb1881e",
+    "title": "Option fields",
+    "fields": [
+        {
+            "key": "field_6419c71f9105a",
+            "label": "header slogan",
+            "name": "header_slogan",
+            "type": "text",
+            "instructions": "назва",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6419c9229105b",
+            "label": "Header phone",
+            "name": "header_phone",
+            "type": "text",
+            "instructions": "Телефон",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6419c9af9105c",
+            "label": "Header work time",
+            "name": "header_work_time",
+            "type": "text",
+            "instructions": "часи роботи",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1679411674
+}

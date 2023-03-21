@@ -26,13 +26,13 @@
         <div class="container">
             <div class="header-title">
                 <div class="header-slogan">
-                    <h2><?php echo get_field('header_slogan'); ?></h2>
+                    <h2><?php echo get_field('header_slogan', 'option'); ?></h2>
                 </div>
                 <div>
                     <div class="header-busket">
                         <div class="contact">
-                            <p class="phone"><?php echo get_field('header_phone'); ?></p>
-                            <p class="work-time"><?php echo get_field('header_work_time'); ?></p>
+                            <p class="phone"><?php echo get_field('header_phone', 'option'); ?></p>
+                            <p class="work-time"><?php echo get_field('header_work_time', 'option'); ?></p>
                         </div>
                         <div>
                             <div class="busket">
