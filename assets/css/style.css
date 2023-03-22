@@ -526,6 +526,30 @@
     }
 }
 
+.quantity {
+display: none;
+}
+
+p.stock{
+    display: none;
+}
+
+.single_add_to_cart_button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #BF1E77;
+    border-radius: 10px 10px 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
 /*Contacts*/
 .contacts-section {
     margin-bottom: -100px;
@@ -639,19 +663,19 @@
     color: #BF1E77;
 }
 
-.quantity {
+.quantity-step {
     display: flex;
     justify-content: center;
 }
 
-.quantity input {
+.quantity-step input {
     width: 50px;
     border: none;
     background-color: #fceded;
     text-align: center;
 }
 
-.quantity input:focus {
+.quantity-step input:focus {
     outline: none;
 }
 
@@ -663,7 +687,7 @@
 }
 
 @media (max-width: 768px) {
-    .quantity {
+    .quantity-step {
         display: flex;
         flex-direction: column;
         align-items: center;

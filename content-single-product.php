@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying product content in the single-product.php template
  *
@@ -15,42 +16,38 @@
  * @version 3.6.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 ?>
 
 <div class="back-color">
-        <!-- Review Section
+    <!-- Review Section
     ================================================== -->
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <?php echo $product->get_image('full', array('class' => 'review-img')); ?>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <?php echo $product->get_image('full', array('class' => 'review-img')); ?>
+                </div>
+                <div class="col-md-6 col-12 review-text-content">
+                    <div class="review-head container-review">
+                        <p><?php echo $product->get_name(); ?></p>
                     </div>
-                    <div class="col-md-6 col-12 review-text-content">
-                        <div class="review-head container-review">
-                            <p><?php echo $product->get_name(); ?></p>
+                    <div class="review-subhead container-review">
+                        <p><?php echo $product->get_short_description(); ?></p>
+                    </div>
+                    <div class="review-subhead container-review">
+                        <p><?php echo $product->get_description(); ?></p>
+                    </div>
+                    <div class="review-order container-review">
+                        <div class="review-price">
+                            <p><?php echo $product->get_price(); ?> грн.</p>
                         </div>
-                        <div class="review-subhead container-review">
-                            <p><?php echo $product->get_short_description(); ?></p>
-                        </div>
-                        <div class="review-subhead container-review">
-                            <p><?php echo $product->get_description(); ?></p>
-                        </div>
-                        <div class="review-order container-review">
-                            <div class="review-price">
-                                <p><?php echo $product->get_price(); ?> грн.</p>
-                            </div>
-                            <div class="review-busket">
-                                <a href="#">В корзину</a>
-                            </div>
-                        </div>
+                        <?php add_to_cart_custom(); ?>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </section>
-
-
+    </section>

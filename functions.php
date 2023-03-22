@@ -183,6 +183,8 @@ require get_template_directory() . '/inc/customizer.php';
 
 require get_template_directory() . '/woocommerse/includes/wc-functions.php';
 
+require get_template_directory() . '/woocommerse/includes/wc-functions-remove.php';
+
 /**
  * Load Jetpack compatibility file.
  */
