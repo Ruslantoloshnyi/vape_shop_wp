@@ -5,9 +5,14 @@ if (!defined('_S_VERSION')) {
     define('_S_VERSION', '1.0.0');
 }
 
-function add_to_cart_custom() {
-    $test = '<div class="review-busket">' . woocommerce_template_single_add_to_cart() . '</div>';
-    $test = str_replace('<div class="quantity">', '<div class="suka">', $test);
-    return $test;
+function add_to_cart_custom_single() {
+    $button = '<div class="review-busket">' . woocommerce_template_single_add_to_cart() . '</div>';    
+    return $button;
 }
-add_action('woocommerce_single_product_summary', 'add_to_cart_custom', 10);
+add_action('woocommerce_single_product_summary', 'add_to_cart_custom_single', 10);
+
+function add_to_cart_custom_catalog() {
+    $button = '<div class="catalog-busket">' . woocommerce_template_single_add_to_cart() . '</div>';    
+    return $button;
+}
+add_action('woocommerce_single_product_summary', 'add_to_cart_custom_catalog', 10);

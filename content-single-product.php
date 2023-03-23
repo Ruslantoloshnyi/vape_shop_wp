@@ -44,7 +44,7 @@ global $product;
                         <div class="review-price">
                             <p><?php echo $product->get_price(); ?> грн.</p>
                         </div>
-                        <?php add_to_cart_custom(); ?>
+                        <?php add_to_cart_custom_single(); ?>
                     </div>
                 </div>
             </div>
