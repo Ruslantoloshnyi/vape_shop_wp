@@ -16,3 +16,6 @@ function add_to_cart_custom_catalog() {
     return $button;
 }
 add_action('woocommerce_single_product_summary', 'add_to_cart_custom_catalog', 10);
+
+
+

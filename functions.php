@@ -155,6 +155,7 @@ function v_p_styles() {
 
 function v_p_scripts() {
 	wp_enqueue_script('bootsrap_scripts', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js');
+	wp_enqueue_script('vp_scripts_js', get_template_directory_uri() . '/assets/js/script.js');
 }
 
 add_action( 'wp_enqueue_scripts', 'vape_shop_scripts' );
