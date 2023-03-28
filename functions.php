@@ -182,9 +182,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-require get_template_directory() . '/woocommerse/includes/wc-functions.php';
+require get_template_directory() . '/woocommerce/includes/wc-functions.php';
 
-require get_template_directory() . '/woocommerse/includes/wc-functions-remove.php';
+require get_template_directory() . '/woocommerce/includes/wc-functions-remove.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -214,5 +214,9 @@ if (function_exists('acf_add_options_page')) {
 	));
 
 };
+
+
+
+
 
 

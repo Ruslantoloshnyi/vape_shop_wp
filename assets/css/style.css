@@ -526,8 +526,12 @@
     }
 }
 
-.quantity {
-display: none;
+.review-order .cart .quantity {
+    display: none;
+}
+
+.catalog-card-price .cart .quantity {
+    display: none;
 }
 
 p.stock{

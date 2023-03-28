@@ -9,9 +9,12 @@ get_header();
 global $woocommerce;
 $items = $woocommerce->cart->get_cart();
 $total_price = 0;
-
-
 ?>
+
+<?php
+ woocommerce_quantity_input();
+ ?>
+
 
 
 <div class="back-color">
@@ -61,7 +64,7 @@ $total_price = 0;
                                     <button class="minus-btn" type="button" name="button">
                                         -
                                     </button>
-                                    <input id="quantity-input" type="text" name="name" value="4">
+                                    <input id="quantity-input" type="text" name="name" value="1">
                                     <button class="plus-btn" type="button" name="button">
                                         +
                                     </button>
@@ -82,5 +85,10 @@ $total_price = 0;
 
         </div>
     </section>
+
+    <?php 
+    // $test = $_POST['param1'];
+    // var_dump($test); ?>
+
 
     <?php get_footer(); ?>
