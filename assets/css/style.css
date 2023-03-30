@@ -1,5 +1,9 @@
 /*Homepage header*/
 
+body {
+    background-color: #fcfafa;
+}
+
 .back-color {
     background-color: #fcfafa;
 }
@@ -317,7 +321,7 @@
 
 .page-numbers {
     display: flex;
-    list-style-type: none;    
+    list-style-type: none;
 }
 
 .page-item {
@@ -325,12 +329,12 @@
     background: #FBF7F4;
     border-radius: 4px;
     margin-right: 15px;
-    border: 1px solid #E5E5E5; 
+    border: 1px solid #E5E5E5;
 }
 
 .page-item a.page-numbers {
-   text-decoration: none;
-   color: #BF1E77;
+    text-decoration: none;
+    color: #BF1E77;
 }
 
 .page-item span {
@@ -522,7 +526,7 @@
         box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
         min-height: 300px;
         margin-bottom: 15px;
-        width: 100%;       
+        width: 100%;
     }
 }
 
@@ -534,7 +538,7 @@
     display: none;
 }
 
-p.stock{
+p.stock {
     display: none;
 }
 
@@ -647,6 +651,10 @@ p.stock{
     color: #BF1E77;
 }
 
+.busket-product-name a {
+    text-decoration: none;
+}
+
 .busket-product-price {
     font-family: 'Montserrat';
     font-style: normal;
@@ -658,6 +666,11 @@ p.stock{
 
 .product-quantity {
     display: flex;
+}
+
+.quantity-wrapper {
+    display: flex; 
+    align-items: center;  
 }
 
 .minus-btn {
@@ -683,9 +696,18 @@ p.stock{
     outline: none;
 }
 
+.quantity {
+    align-self: center;    
+}
+
+.quantity input {
+    height: 40px;
+}
+
 .plus-btn {
     width: 30px;
-    border: none;
+    height: 80%;
+    border: none;    
     background-color: #fceded;
     color: #BF1E77;
 }
@@ -718,6 +740,11 @@ p.stock{
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.remove {
+    text-decoration: none;
+    color: #BF1E77;
 }
 
 /*Order*/
