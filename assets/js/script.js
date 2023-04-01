@@ -2,44 +2,42 @@
 
 const buttonMinus = document.querySelectorAll('.minus-btn');
 const buttonPlus = document.querySelectorAll('.plus-btn');
-const quantityInput = document.querySelectorAll('#quantity-input');
-
-function myCartApi() {
-    fetch('http://vape-shop/cart/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ quantity: quantityInput.value })
-    })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Something went wrong.');
-        })
-        .then(data => {
-            console.log(data);
-            // Обновляем данные на странице
-        })
-        .catch(error => console.error(error));
-};
+const quantityInput = document.querySelectorAll('.quantity input');
 
 for (let i = 0; i < buttonMinus.length; i++) {
 
-    buttonMinus[i].addEventListener('click', function () {
+    function myCart_quantity_change() {
+        const formData = new FormData();
+        formData.append('action', 'quantity_change');
+        formData.append('quantity', Number(quantityInput[i].value));
+
+        fetch(myajax['url'], {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(text => {
+                console.log(text);                
+            })
+            .catch(error => console.error(error));            
+    };
+
+    buttonMinus[i].addEventListener('click', function (event) {
         if (quantityInput[i].value > 1) {
             quantityInput[i].value = Number(quantityInput[i].value) - 1;
         }
-        myCartApi();
+        myCart_quantity_change();
+        event.preventDefault();
     });
 
-    buttonPlus[i].addEventListener('click', function () {
+    buttonPlus[i].addEventListener('click', function (event) {
         if (quantityInput[i].value >= 1) {
             quantityInput[i].value = Number(quantityInput[i].value) + 1;
         }
-        myCartApi();
+        myCart_quantity_change();
+        event.preventDefault();
     });
+    
 };
 
 

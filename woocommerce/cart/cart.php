@@ -106,6 +106,9 @@ defined('ABSPATH') || exit;
 
 						<td class="quantity-step" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
 							<div class="quantity-wrapper">
+								<?php
+								// WC()->cart->set_quantity( $cart_item_key, '3' );
+								?>
 								<div>
 									<button class="minus-btn" type="button" name="button">
 										-
@@ -140,6 +143,11 @@ defined('ABSPATH') || exit;
 									</button>
 								</div>
 							</div>
+							<?php
+							
+							// $quantity_test = $cart_item['quantity'];
+							// var_dump($quantity_test);
+							?>
 						</td>
 
 						<td class="busket-product-price" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
@@ -150,7 +158,7 @@ defined('ABSPATH') || exit;
 					</tr>
 			<?php
 				}
-				$countSubTotal += $_product->get_price();
+				$countSubTotal += ($_product->get_price() * $quantity_test);
 			}
 			?>
 		</tbody>
