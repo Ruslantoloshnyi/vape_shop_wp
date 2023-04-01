@@ -228,8 +228,10 @@ if (function_exists('acf_add_options_page')) {
 
 function custom_cart_quantity_change() {
 	$quantity = isset( $_POST['quantity'] ) ? intval( $_POST['quantity'] ) : 0;
+	$product_id = isset( $_POST['product_id'] ) ? intval( $_POST['product_id'] ) : 0;
 	echo $quantity;
-	wp_die();
+	echo $product_id;
+	wp_die();	
 };
 add_action( 'wp_ajax_quantity_change', 'custom_cart_quantity_change' );
 add_action( 'wp_ajax_nopriv_quantity_change', 'custom_cart_quantity_change' );

@@ -106,9 +106,7 @@ defined('ABSPATH') || exit;
 
 						<td class="quantity-step" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
 							<div class="quantity-wrapper">
-								<?php
-								// WC()->cart->set_quantity( $cart_item_key, '3' );
-								?>
+								
 								<div>
 									<button class="minus-btn" type="button" name="button">
 										-
@@ -144,6 +142,8 @@ defined('ABSPATH') || exit;
 								</div>
 							</div>
 							<?php
+							// do_action('wp_ajax_nopriv_quantity_change');
+							
 							
 							// $quantity_test = $cart_item['quantity'];
 							// var_dump($quantity_test);
