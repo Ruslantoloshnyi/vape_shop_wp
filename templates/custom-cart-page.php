@@ -15,9 +15,9 @@ get_header();
         ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <header class="catalog-head">
+                <div class="catalog-head">
                     <?php the_title('<h2 class="">', '</h2>'); ?>
-                </header><!-- .entry-header -->
+                </div><!-- .entry-header -->
 
                 <?php vape_shop_post_thumbnail(); ?>
 

@@ -13,4 +13,6 @@ if ( ! defined( '_S_VERSION' ) ) {
 // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 // remove_action( 'woocommerce_single_product_summary', 'WC_Structured_Data::generate_product_data()', 60 );
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
 

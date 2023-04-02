@@ -16,9 +16,7 @@
  * @version 7.4.0
  */
 
-defined('ABSPATH') || exit;
-
-// do_action( 'woocommerce_before_cart' ); 
+defined('ABSPATH') || exit; 
 ?>
 
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
@@ -141,13 +139,7 @@ defined('ABSPATH') || exit;
 									</button>
 								</div>
 							</div>
-							<?php
-							// do_action('wp_ajax_nopriv_quantity_change');
 							
-							
-							// $quantity_test = $cart_item['quantity'];
-							// var_dump($quantity_test);
-							?>
 						</td>
 
 						<td class="busket-product-price" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
@@ -158,6 +150,7 @@ defined('ABSPATH') || exit;
 					</tr>
 			<?php
 				}
+				$quantity_test = $cart_item['quantity'];
 				$countSubTotal += ($_product->get_price() * $quantity_test);
 			}
 			?>
@@ -165,9 +158,12 @@ defined('ABSPATH') || exit;
 	</table>
 	<?php do_action('woocommerce_after_cart_table'); ?>
 </form>
-<?php echo $countSubTotal; ?>
 
 <?php do_action('woocommerce_before_cart_collaterals'); ?>
+
+<div class="sub-total">
+	<p>Всього : <span><?php echo $countSubTotal; ?> грн</span></p>
+</div>
 
 <div class="cart-collaterals">
 	<?php

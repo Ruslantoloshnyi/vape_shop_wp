@@ -8,6 +8,10 @@ body {
     background-color: #fcfafa;
 }
 
+header {
+    background-color: white;
+}
+
 .header-title {
     display: flex;
     justify-content: space-evenly;
@@ -653,6 +657,12 @@ p.stock {
 
 .busket-product-name a {
     text-decoration: none;
+    color: #BF1E77;
+}
+
+.busket-product-name a.text:active {
+    text-decoration: none;
+    color: #BF1E77;
 }
 
 .busket-product-price {
@@ -669,8 +679,8 @@ p.stock {
 }
 
 .quantity-wrapper {
-    display: flex; 
-    align-items: center;  
+    display: flex;
+    align-items: center;
 }
 
 .minus-btn {
@@ -697,7 +707,7 @@ p.stock {
 }
 
 .quantity {
-    align-self: center;    
+    align-self: center;
 }
 
 .quantity input {
@@ -707,7 +717,7 @@ p.stock {
 .plus-btn {
     width: 30px;
     height: 80%;
-    border: none;    
+    border: none;
     background-color: #fceded;
     color: #BF1E77;
 }
@@ -744,6 +754,26 @@ p.stock {
 
 .remove {
     text-decoration: none;
+    color: #BF1E77;
+}
+
+.sub-total p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #545155;
+}
+
+.sub-total p span {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 150%;
+    text-transform: uppercase;
     color: #BF1E77;
 }
 
