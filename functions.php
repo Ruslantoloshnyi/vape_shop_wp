@@ -163,7 +163,9 @@ function v_p_scripts()
 {
 	wp_enqueue_script('bootsrap_scripts', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js');
 	wp_enqueue_script('vp_scripts_js', get_template_directory_uri() . '/assets/js/script.js');
-	wp_localize_script( 'vp_scripts_js', 'myajax',
+	wp_localize_script(
+		'vp_scripts_js',
+		'myajax',
 		array(
 			'url' => admin_url('admin-ajax.php')
 		)
@@ -227,13 +229,19 @@ if (function_exists('acf_add_options_page')) {
 };
 
 function custom_cart_quantity_change() {
-	$quantity = isset( $_POST['quantity'] ) ? intval( $_POST['quantity'] ) : 0;
-	$product_id = isset( $_POST['product_id'] ) ? intval( $_POST['product_id'] ) : 0;
-	echo $quantity;
-	echo $product_id;
-	wp_die();	
+
+	$quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 0;
+	$product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
+
+	$cart_item_key = WC()->cart->find_product_in_cart(WC()->cart->generate_cart_id($product_id));
+	
+	if ($cart_item_key) {
+		WC()->cart->set_quantity($cart_item_key, $quantity);
+		echo "Item Quantity Updated Successfully!";
+	} else {
+		echo "Item not found!";
+	}
+	wp_die();
 };
-add_action( 'wp_ajax_quantity_change', 'custom_cart_quantity_change' );
-add_action( 'wp_ajax_nopriv_quantity_change', 'custom_cart_quantity_change' );
-
-
+add_action('wp_ajax_quantity_change', 'custom_cart_quantity_change');
+add_action('wp_ajax_nopriv_quantity_change', 'custom_cart_quantity_change');
