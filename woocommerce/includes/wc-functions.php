@@ -25,4 +25,50 @@ function add_to_cart_custom_catalog() {
 add_action('woocommerce_single_product_summary', 'add_to_cart_custom_catalog', 10);
 
 
+function add_custom_checkout_fields( $fields ) {
+
+    $fields['billing']['billing_first_name'] = array(
+        'label' => __('', 'woocommerce'),
+        'placeholder' => _x('Имя', 'Имя', 'woocommerce'),
+        'required' => true,
+        'class' => array('col-md-8 col-12'),
+        'clear' => true
+    );
+
+    $fields['billing']['billing_last_name'] = array(
+        'label' => __('', 'woocommerce'),
+        'placeholder' => _x('Прізвище', 'Имя', 'woocommerce'),
+        'required' => true,
+        'class' => array('col-md-8 col-12'),
+        'clear' => true
+    );
+
+    $fields['billing']['billing_city'] = array(
+        'label' => __('', 'woocommerce'),
+        'placeholder' => _x('Місто', 'Имя', 'woocommerce'),
+        'required' => true,
+        'class' => array('col-md-8 col-12'),
+        'clear' => true
+    );
+
+    $fields['billing']['billing_phone'] = array(
+        'label' => __('', 'woocommerce'),
+        'placeholder' => _x('Телефон', 'Имя', 'woocommerce'),
+        'required' => true,
+        'class' => array('col-md-8 col-12'),
+        'clear' => true
+    );
+
+    $fields['billing']['billing_email'] = array(
+        'label' => __('', 'woocommerce'),
+        'placeholder' => _x('Email', 'Имя', 'woocommerce'),
+        'required' => true,
+        'class' => array('col-md-8 col-12'),
+        'clear' => true
+    );
+
+    return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'add_custom_checkout_fields' );
+
 

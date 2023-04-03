@@ -15,4 +15,18 @@ if ( ! defined( '_S_VERSION' ) ) {
 // remove_action( 'woocommerce_single_product_summary', 'WC_Structured_Data::generate_product_data()', 60 );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
+function remove_checkout_fields( $fields ) {
+	unset($fields['order']['order_comments']['placeholder']);
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_address_1']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_postcode']);
+    unset($fields['billing']['billing_city_field']);
+    unset($fields['billing']['billing_state']);
+    
+    return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'remove_checkout_fields' ); 
+
 
