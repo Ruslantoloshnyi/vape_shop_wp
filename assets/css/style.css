@@ -808,7 +808,7 @@ legend {
 
 .order-card {
     background-color: #fceded;
-    max-width: 250px;
+    /* max-width: 100%; */
     max-height: auto;
 }
 

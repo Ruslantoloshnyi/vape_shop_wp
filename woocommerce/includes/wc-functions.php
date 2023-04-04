@@ -69,6 +69,8 @@ function add_custom_checkout_fields( $fields ) {
 
     return $fields;
 }
-add_filter( 'woocommerce_checkout_fields' , 'add_custom_checkout_fields' );
+add_filter( 'woocommerce_checkout_fields' , 'add_custom_checkout_fields');
+
+
 
 
