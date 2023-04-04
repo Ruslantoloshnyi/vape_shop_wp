@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -12,17 +13,22 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<?php wp_head(); ?>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+    <?php wp_body_open(); ?>
+    <?php $link = get_the_permalink(7);
+    $image = get_field('header_cart_image', 'option');
+    $img = wp_get_attachment_image($image, 'full', 'false', array('class' => 'busket-img'));
+    ?>
 
-<header>
+    <header>
         <div class="container">
             <div class="header-title">
                 <div class="header-slogan">
@@ -35,14 +41,16 @@
                             <p class="work-time"><?php echo get_field('header_work_time', 'option'); ?></p>
                         </div>
                         <div>
-                            <div class="busket">
-                                <div>
-                                    <img class="busket-img" src="image/busket.png" alt="">
+                            <a href="<?php echo $link; ?>">
+                                <div class="busket">
+                                    <div>
+                                        <?php echo $img; ?>
+                                    </div>
+                                    <div>
+                                        <p><?php echo WC()->cart->get_cart_contents_count(); ?></p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p>12</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -52,9 +60,7 @@
                 <nav class="navbar navbar-expand-md navbar-light bg-vape-shop">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
