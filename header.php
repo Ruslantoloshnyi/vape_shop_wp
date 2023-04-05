@@ -66,10 +66,10 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             
                             <?php wp_nav_menu([
-                                'menu' => 'header_menu',
-                                'menu_class' => 'navbar-nav',
-                                'add_li_class' => 'nav-item',
-                                'link_class' => 'nav-link'
+                                'theme_location' => 'header_menu',
+                                'menu_class'     => 'navbar-nav',
+                                'add_li_class'   => 'nav-item',
+                                'link_class'     => 'nav-link'
                             ]); ?>
 
                         </div>

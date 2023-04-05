@@ -18,11 +18,7 @@
                     <div class="row footer-content">
                         <div class="col-6">
                             <div class="footer-menu">
-                                <ul>
-                                    <li><a href="#">Контакти</a></li>
-                                    <li><a href="#">Оплата</a></li>
-                                    <li><a href="#">Доставка</a></li>
-                                </ul>
+                                <? wp_nav_menu(['theme_location' => 'footer_menu']); ?>
                             </div>
                         </div>
                         <div class="col-6 footer-text">
