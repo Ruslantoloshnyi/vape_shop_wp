@@ -1,13 +1,13 @@
 {
-    "key": "group_64171f6573c07",
-    "title": "Catalog single product fields",
+    "key": "group_6414536447e8e",
+    "title": "Catalog fields",
     "fields": [
         {
-            "key": "field_6417240c64770",
-            "label": "Catalog single product heading",
-            "name": "catalog_single_product_heading",
+            "key": "field_6414538d31a1c",
+            "label": "Catalog heading",
+            "name": "catalog_heading",
             "type": "text",
-            "instructions": "введiть назву категорii",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -27,7 +27,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/catalog-single-product.php"
+                "value": "templates\/catalog.php"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1680704720
+    "modified": 1680704668
 }

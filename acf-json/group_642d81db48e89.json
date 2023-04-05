@@ -1,0 +1,84 @@
+{
+    "key": "group_642d81db48e89",
+    "title": "Sidebar fields",
+    "fields": [
+        {
+            "key": "field_642d82188ca8a",
+            "label": "Sidebar",
+            "name": "sidebar",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_642d82528ca8b",
+                    "label": "Sidebar link",
+                    "name": "sidebar_link",
+                    "type": "link",
+                    "instructions": "Посилання на категорію товарів",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_642d829f8ca8c",
+                    "label": "Sidebar image",
+                    "name": "sidebar_image",
+                    "type": "image",
+                    "instructions": "Зображення категоріі товарів",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "full",
+                    "library": "all",
+                    "min_width": 200,
+                    "min_height": 50,
+                    "min_size": "",
+                    "max_width": 300,
+                    "max_height": 80,
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1680705615
+}

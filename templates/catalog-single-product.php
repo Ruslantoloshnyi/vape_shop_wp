@@ -51,15 +51,14 @@ get_header();
 
             <div class="row">
                 <div class="col-lg-3 col-md-2 col-3 catalog-link">
-                    <?php
-                    if (have_rows('catalog_single_product_sidebar')) :
-                        while (have_rows('catalog_single_product_sidebar')) : the_row();
-                            $image = get_sub_field('catalog_single_product_link_img');
+                <?php
+                    if (have_rows('sidebar', 'option')) :
+                        while (have_rows('sidebar', 'option')) : the_row();
+                            $image = get_sub_field('sidebar_image', 'option');
                             $img = wp_get_attachment_image($image, 'full', 'false', array('class' => 'catalog-img'));
-                            $sidebar_link = get_sub_field('catalog_single_product_link');
                     ?>
                             <div>
-                                <a href="<?php echo $sidebar_link; ?>"><?php echo $img; ?></a>
+                                <a href="<?php echo get_sub_field('sidebar_link', 'option'); ?>"><?php echo $img; ?></a>
                             </div>
                     <?php
                         endwhile;
