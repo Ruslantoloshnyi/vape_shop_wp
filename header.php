@@ -64,23 +64,13 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link nav-active">Головна</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Каталог</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Контакти</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Оплата і доставка</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Корзина</a>
-                                </li>
-                            </ul>
+                            
+                            <?php wp_nav_menu([
+                                'menu' => 'header_menu',
+                                'menu_class' => 'navbar-nav',
+                                'add_li_class' => 'nav-item',
+                                'link_class' => 'nav-link'
+                            ]); ?>
 
                         </div>
                     </div>

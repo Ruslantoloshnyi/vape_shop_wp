@@ -51,7 +51,8 @@ function vape_shop_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__('Primary', 'vape-shop'),
+			'header_menu' => 'Меню у шапці',
+			'footer_menu' => 'Меню у подвалі'
 		)
 	);
 
@@ -234,7 +235,7 @@ function custom_cart_quantity_change() {
 	$product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
 
 	$cart_item_key = WC()->cart->find_product_in_cart(WC()->cart->generate_cart_id($product_id));
-	
+
 	if ($cart_item_key) {
 		WC()->cart->set_quantity($cart_item_key, $quantity);
 		echo "Item Quantity Updated Successfully!";
@@ -245,3 +246,19 @@ function custom_cart_quantity_change() {
 };
 add_action('wp_ajax_quantity_change', 'custom_cart_quantity_change');
 add_action('wp_ajax_nopriv_quantity_change', 'custom_cart_quantity_change');
+
+function add_additional_class_on_li($classes, $item, $args) {
+	if (isset($args->add_li_class)) {
+		$classes[] = $args->add_li_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+function add_menu_link_class($atts, $item, $args) {
+	if (property_exists($args, 'link_class')) {
+		$atts['class'] = $args->link_class;
+	}
+	return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
