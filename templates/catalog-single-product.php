@@ -97,7 +97,7 @@ get_header();
                                     </div>
                                     <div class="catalog-card-price">
                                         <div class="catalog-price"><?php echo $product->get_price(); ?> грн</div>
-                                        <?php add_to_cart_custom_catalog(); ?>
+                                        <div class="catalog-busket"><a href="<?php the_permalink(); ?>">До товару</a></div>
                                     </div>
                                 </div>
                         <?php

@@ -17,14 +17,6 @@ function add_to_cart_custom_single() {
 }
 add_action('woocommerce_single_product_summary', 'add_to_cart_custom_single', 10);
 
-function add_to_cart_custom_catalog() {
-    $button = '<div class="catalog-busket">' . woocommerce_template_single_add_to_cart() . '</div>'; 
-       
-    return $button;
-}
-add_action('woocommerce_single_product_summary', 'add_to_cart_custom_catalog', 10);
-
-
 function add_custom_checkout_fields( $fields ) {
 
     $fields['billing']['billing_first_name'] = array(
