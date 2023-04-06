@@ -45,14 +45,14 @@ $products = new WP_Query($args);
 
             <div class="row">
                 <div class="col-lg-3 col-md-2 col-3 catalog-link">
-                    <?php
-                    if (have_rows('catalog_sidebar')) :
-                        while (have_rows('catalog_sidebar')) : the_row();
-                            $image = get_sub_field('catalog_sidebar_image');
+                <?php
+                    if (have_rows('sidebar', 'option')) :
+                        while (have_rows('sidebar', 'option')) : the_row();
+                            $image = get_sub_field('sidebar_image', 'option');
                             $img = wp_get_attachment_image($image, 'full', 'false', array('class' => 'catalog-img'));
                     ?>
                             <div>
-                                <a href="<?php echo get_sub_field('catalog_sidebar_link'); ?>"><?php echo $img; ?></a>
+                                <a href="<?php echo get_sub_field('sidebar_link', 'option'); ?>"><?php echo $img; ?></a>
                             </div>
                     <?php
                         endwhile;
