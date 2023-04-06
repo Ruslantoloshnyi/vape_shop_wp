@@ -70,6 +70,15 @@ function add_custom_checkout_fields( $fields ) {
     return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'add_custom_checkout_fields');
+ 
+function woocommerce_remove_uah_symbol( $valyuta_symbol, $valyuta_code ) {
+	if( $valyuta_code === 'UAH' ) {
+		return 'грн'; 
+		
+	}
+	return $valyuta_symbol;
+}
+add_filter('woocommerce_currency_symbol', 'woocommerce_remove_uah_symbol', 9999, 2);
 
 
 
