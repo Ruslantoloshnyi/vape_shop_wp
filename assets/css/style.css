@@ -931,11 +931,23 @@ legend {
     margin-top: 60px;
 }
 
+.order-return a {
+color: #ffffff;
+}
+
 .order-return-button {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: #BF1E77;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.wp-element-button {
     background-color: #BF1E77;
     border: none;
     border-radius: 4px 4px 4px 4px;
@@ -994,4 +1006,13 @@ legend {
 
 .delivery {
     margin-bottom: -20px;
+}
+
+.woocommerce-privacy-policy-text a {
+    text-decoration: none;
+    color: #BF1E77;
+}
+
+.woocommerce-privacy-policy-text a:focus {
+    color: #fcc2c2;
 }

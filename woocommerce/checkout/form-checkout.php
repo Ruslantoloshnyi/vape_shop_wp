@@ -34,7 +34,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 	<div class="row">
-		<div class="col-md-6 col-6">
+		<div class="col-md-6 col-12">
 			<?php if ($checkout->get_checkout_fields()) : ?>
 
 				<fieldset>
@@ -45,13 +45,22 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 				</fieldset>
 		</div>
 
-		<div class="col-md-6 col-6 order-container">
+		<div class="col-md-6 col-12 order-container">
 			<div class="order-card">
 				<div class="container">
 					<h3 id="order_review_heading"><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
 					<?php do_action('woocommerce_checkout_order_review'); ?>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="order-return">
+		<div>
+			<a class="order-return-button" href="<?php echo get_template_directory_uri() . '/cart'; ?>">Назад до корзини</a>
+		</div>
+		<div>
+			<a class="order-return-button" href="<?php echo get_template_directory_uri() . '/каталог'; ?>">Продовжити покупки</a>
 		</div>
 	</div>
 
