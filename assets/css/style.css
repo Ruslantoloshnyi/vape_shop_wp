@@ -777,7 +777,7 @@ p.stock {
     color: #BF1E77;
 }
 
-.sub-total p{
+.sub-total p {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -931,8 +931,33 @@ legend {
     margin-top: 60px;
 }
 
+@media (max-width: 400px) {
+    .order-return {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .order-return div {
+        padding-bottom: 30px;
+    }
+
+    .catalog-head h2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #545155;
+    }
+    .order-card table {
+        display: none;
+    }
+}
+
 .order-return a {
-color: #ffffff;
+    color: #ffffff;
 }
 
 .order-return-button {
@@ -954,7 +979,7 @@ color: #ffffff;
     color: #ffffff;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 460px) {
 
     .order-return-button {
         padding-left: 15px;
@@ -968,7 +993,6 @@ color: #ffffff;
     }
 
 }
-
 
 /*Peyment*/
 
