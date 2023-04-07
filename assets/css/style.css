@@ -10,6 +10,7 @@ body {
 
 header {
     background-color: white;
+    overflow: hidden;
 }
 
 .header-title {
@@ -20,6 +21,7 @@ header {
 
 .header-busket {
     display: flex;
+    justify-content: end;
 }
 
 .header-busket a {
@@ -34,6 +36,11 @@ header {
     line-height: 150%;
     text-transform: uppercase;
     color: #BF1E77;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
 }
 
 .contact p.phone {
@@ -213,6 +220,12 @@ header {
     padding-bottom: 47px;
 }
 
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .footer-text div p {
     height: 24px;
     color: #BF1E77;
@@ -233,6 +246,39 @@ header {
 
 .footer-content {
     padding-top: 70px;
+    display: flex;
+}
+
+@media (max-width: 360px) {
+    .header-slogan {
+        font-size: 32px;
+    }
+
+    .contact p.phone {
+        font-size: 16px;
+    }
+
+    .contact p.work-time {
+        font-size: 10px;
+    }
+
+    .header-busket {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .menu ol,
+    ul {
+        padding-left: 0rem;
+    }
 }
 
 /*Catalog*/
@@ -951,6 +997,7 @@ legend {
         text-transform: uppercase;
         color: #545155;
     }
+
     .order-card table {
         display: none;
     }
