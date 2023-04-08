@@ -475,6 +475,7 @@ header {
     font-size: 16px;
     line-height: 150%;
     color: #545155;
+    overflow-wrap: break-word;
 }
 
 .container-review {
@@ -495,8 +496,7 @@ header {
         display: flex;
         justify-content: space-between;
         margin-top: 50px; 
-        flex-direction: column;
-        text-align: center;   
+        flex-direction: column;   
     }
 
 }
