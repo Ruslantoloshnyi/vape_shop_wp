@@ -15,40 +15,12 @@ get_header();
 
         <div class="container">
 
-            <div class="row">
-
-                <div class="col-md-6 col-12">
                     <div class="catalog-head">
                         <div>
                             <h2><?php echo $catagory_name; ?></h2>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12">
-
-                    <div class="row">
-
-                        <div class="col-6">
-                            <div class="sort">
-                                <p>За ціною</p>
-                                <img class="sort-img" src="../vape shop/image/arrow-bottom.png" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <div class="sort">
-                                <p>За датою</p>
-                                <img class="sort-img" src="../vape shop/image/arrow-top.png" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+                    </div>         
+           
             <div class="row">
                 <div class="col-lg-3 col-md-2 col-3 catalog-link">
                     <?php
@@ -92,7 +64,7 @@ get_header();
                                     <div class="catalog-card-img">
                                         <a href="<?php the_permalink(); ?>"><?php echo $product->get_image('full', array('class' => 'catalog-img')); ?></a>
                                     </div>
-                                    <div class="card-container">
+                                    
                                         <div class="catalog-card-name">
                                             <p><?php echo $product->get_name(); ?></p>
                                         </div>
@@ -100,7 +72,7 @@ get_header();
                                             <div class="catalog-price"><?php echo $product->get_price(); ?> грн</div>
                                             <div class="catalog-busket"><a href="<?php the_permalink(); ?>">До товару</a></div>
                                         </div>
-                                    </div>
+                                    
                                 </div>
                         <?php
                             endwhile;

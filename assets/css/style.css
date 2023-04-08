@@ -290,7 +290,7 @@ header {
 
 .catalog-head {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
 .catalog-head h2 {
@@ -301,6 +301,7 @@ header {
     line-height: 150%;
     text-transform: uppercase;
     color: #545155;
+    overflow-wrap: break-word;
 }
 
 .catalog-card {
@@ -485,7 +486,19 @@ header {
 .review-order {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 50px;    
+}
+
+@media (max-width: 370px) {
+
+    .review-order {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px; 
+        flex-direction: column;
+        text-align: center;   
+    }
+
 }
 
 .review-price {
@@ -614,6 +627,17 @@ header {
         min-height: 400px;
         margin-bottom: 15px;
         width: 100%;
+    }
+
+    .catalog-head h2 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #545155;
+        overflow-wrap: break-word;
     }
 }
 
@@ -956,7 +980,7 @@ legend {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 600;
-        font-size: 30px;
+        font-size: 24px;
         line-height: 150%;
         text-transform: uppercase;
         color: #BF1E77;
@@ -1009,10 +1033,11 @@ legend {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
-        font-size: 32px;
+        font-size: 24px;
         line-height: 150%;
         text-transform: uppercase;
         color: #545155;
+        overflow-wrap: break-word;
     }
 
     .order-card table {
