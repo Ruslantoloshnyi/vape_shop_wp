@@ -24,7 +24,7 @@ get_header();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type'      => 'product',
-    'posts_per_page' => 9,
+    'posts_per_page' => -1,
     'orderby'        => 'rand',
     'paged'          => $paged
 );
@@ -88,22 +88,22 @@ $products = new WP_Query($args);
     </section>
 
     <!-- Pagination -->
-    <section class="pagination-section">
-        <nav aria-label="...">
+    <!-- <section class="pagination-section">
+        <nav aria-label="..."> -->
             <?php
-                            $pagination_links_string = paginate_links(array(
-                                'format' => '?paged=%#%',
-                                'current' => max(1, $paged),
-                                'total' => $products->max_num_pages,
-                                'prev_text' => '<<',
-                                'next_text' => '>>',
-                                'type'         => 'list'
-                            ));
-                            $pagination_links_string = str_replace('<li>', '<li class="page-item">', $pagination_links_string);
-                            echo $pagination_links_string;
+                            // $pagination_links_string = paginate_links(array(
+                            //     'format' => '?paged=%#%',
+                            //     'current' => max(1, $paged),
+                            //     'total' => $products->max_num_pages,
+                            //     'prev_text' => '<<',
+                            //     'next_text' => '>>',
+                            //     'type'         => 'list'
+                            // ));
+                            // $pagination_links_string = str_replace('<li>', '<li class="page-item">', $pagination_links_string);
+                            // echo $pagination_links_string;
             ?>
-        </nav>
-    </section> <!-- Pagination end -->
+        <!-- </nav>
+    </section> Pagination end -->
 <?php
                         endif;
                         wp_reset_postdata();
